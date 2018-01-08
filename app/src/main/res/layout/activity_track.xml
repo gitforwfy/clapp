@@ -4,12 +4,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="li.cheng.clapp.activity.TrackActivity">
-
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/ll_control"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="start track"
-        android:onClick="start"
-        />
+        android:orientation="horizontal"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="开始定位"
+            android:onClick="start"
+            />
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="停止定位"
+            android:onClick="stop"
+            />
+    </LinearLayout>
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:layout_below="@+id/ll_control"
+        />
 </RelativeLayout>
