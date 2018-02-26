@@ -15,7 +15,7 @@ import com.wuzhou.wlibrary.page.BaseActivity;
 
 import java.util.List;
 
-import li.cheng.clapp.activity.TrackActivity;
+import li.cheng.clapp.activity.MyActivity;
 import li.cheng.clapp.adapter.HomeAdapter;
 import li.cheng.clapp.service.MainService;
 
@@ -23,7 +23,6 @@ public class MainActivity extends BaseActivity implements HomeAdapter.OnItemClic
     private RecyclerView rv;
     private HomeAdapter mAdapter;
     int spanCount = 5;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,7 +71,7 @@ public class MainActivity extends BaseActivity implements HomeAdapter.OnItemClic
         }
 
         if(KeyEvent.KEYCODE_MENU==keyCode){
-            Intent intent=new Intent(mActivity, TrackActivity.class);
+            Intent intent=new Intent(mActivity, MyActivity.class);
             startActivity(intent);
         }
         return super.onKeyDown(keyCode, event);

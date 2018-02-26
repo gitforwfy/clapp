@@ -29,13 +29,15 @@ import com.wuzhou.wlibrary.utils.WLog;
 import java.util.ArrayList;
 import java.util.List;
 
+import li.cheng.clapp.CActivity;
 import li.cheng.clapp.ClApplication;
 import li.cheng.clapp.R;
 
-public class TrackActivity extends MyActivity {
+public class TrackActivity extends CActivity {
     LBSTraceClient mTraceClient;
     private MapView mMapView = null;
     BaiduMap mBaiduMap;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +67,8 @@ public class TrackActivity extends MyActivity {
         // 轨迹服务ID
         long serviceId = ClApplication.serviceId;
         // 设备标识
-        String entityName = "myTrace";
+//        String entityName = "chengli";
+        String entityName = "wangfengyuan";
         // 是否需要对象存储服务，默认为：false，关闭对象存储服务。注：鹰眼 Android SDK v3.0以上版本支持随轨迹上传图像等对象数据，若需使用此功能，该参数需设为 true，且需导入bos-android-sdk-1.0.2.jar。
         boolean isNeedObjectStorage = false;
         // 初始化轨迹服务
@@ -184,29 +187,31 @@ public class TrackActivity extends MyActivity {
 //                        mBaiduMap.addOverlay(option);
 //                    }
 //                }
+        if(!pointList.isEmpty()){
+            LatLng point = pointList.get(0);
+        //                //构建Marker图标
+            BitmapDescriptor bitmap = BitmapDescriptorFactory
+                    .fromResource(R.mipmap.icon_point);
+            //构建MarkerOption，用于在地图上添加Marker
+            OverlayOptions option = new MarkerOptions()
+                    .position(point)
+                    .icon(bitmap);
+            //在地图上添加Marker，并显示
+            mBaiduMap.addOverlay(option);
 
-                LatLng point = pointList.get(0);
-//                //构建Marker图标
-                BitmapDescriptor bitmap = BitmapDescriptorFactory
-                        .fromResource(R.mipmap.icon_point);
-                //构建MarkerOption，用于在地图上添加Marker
-                OverlayOptions option = new MarkerOptions()
-                        .position(point)
-                        .icon(bitmap);
-                //在地图上添加Marker，并显示
-                mBaiduMap.addOverlay(option);
+            MapStatus mMapStatus = new MapStatus.Builder()
+                    //要移动的点
+                    .target(point)
+                    //放大地图到20倍
+                    .zoom(18)
+                    .build();
+            //定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
+            MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);
 
-                MapStatus mMapStatus = new MapStatus.Builder()
-                        //要移动的点
-                        .target(point)
-                        //放大地图到20倍
-                        .zoom(18)
-                        .build();
-                //定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
-                MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);
+            //改变地图状态
+            mBaiduMap.setMapStatus(mMapStatusUpdate);
+        }
 
-                //改变地图状态
-                mBaiduMap.setMapStatus(mMapStatusUpdate);
 
             }
         };
@@ -215,6 +220,7 @@ public class TrackActivity extends MyActivity {
         mTraceClient.queryHistoryTrack(historyTrackRequest, mTrackListener);
     }
     private List<LatLng> pointList = new ArrayList<>();//轨迹点集合
+
     public void stop(View view) {
         mTraceClient.stopGather(mTraceListener);
     }
@@ -225,12 +231,14 @@ public class TrackActivity extends MyActivity {
         //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理
         mMapView.onDestroy();
     }
+
     @Override
     protected void onResume() {
         super.onResume();
         //在activity执行onResume时执行mMapView. onResume ()，实现地图生命周期管理
         mMapView.onResume();
     }
+
     @Override
     protected void onPause() {
         super.onPause();

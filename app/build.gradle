@@ -11,12 +11,14 @@ android {
         versionCode 1
         versionName "1.0"
     }
-//    buildTypes {
-//        release {
-//            minifyEnabled false
-//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-//        }
-//    }
+
+    useLibrary 'org.apache.http.legacy'
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
 
     sourceSets {
         main {
@@ -29,4 +31,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.0.0'
     compile project(':wlibrary')
+    compile 'cn.bmob.android:bmob-sdk:3.5.0'
 }

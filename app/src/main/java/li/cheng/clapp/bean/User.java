@@ -1,27 +1,36 @@
 package li.cheng.clapp.bean;
 
+import cn.bmob.v3.BmobObject;
+
 /**
  * Created by wfy 2018/1/8 13:55.
  */
 
-public class User {
+public class User extends BmobObject {
     String id;
     String name;
-    User sweet_user;
+    String phone;
+    String email;
+    String bindingId;
+    String password;
 
-    public User(String name) {
-        this.name = name;
+    public String getPassword() {
+        return password;
     }
 
-    public User(String id, String name) {
-        this.id = id;
-        this.name = name;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public User(String id, String name, User sweet_user) {
+    public User() {
+    }
+
+    public User(String id, String name, String phone, String email, String bindingId) {
         this.id = id;
         this.name = name;
-        this.sweet_user = sweet_user;
+        this.phone = phone;
+        this.email = email;
+        this.bindingId = bindingId;
     }
 
     public String getId() {
@@ -40,11 +49,27 @@ public class User {
         this.name = name;
     }
 
-    public User getSweet_user() {
-        return sweet_user;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setSweet_user(User sweet_user) {
-        this.sweet_user = sweet_user;
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getBindingId() {
+        return bindingId;
+    }
+
+    public void setBindingId(String bindingId) {
+        this.bindingId = bindingId;
     }
 }
