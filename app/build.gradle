@@ -10,7 +10,6 @@ android {
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-
         multiDexEnabled true
     }
 
@@ -36,7 +35,6 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.android.support:recyclerview-v7:25.0.0'
     compile 'cn.bmob.android:bmob-sdk:3.5.0'
-    compile (project(':wlibrary')){ exclude group: 'com.google.code.gson'
-        exclude group: 'com.squareup.okhttp3' }
 }

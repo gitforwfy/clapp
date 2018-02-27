@@ -1,28 +1,21 @@
 package li.cheng.clapp.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.wuzhou.wlibrary.utils.WLog;
-
 import li.cheng.clapp.CActivity;
 import li.cheng.clapp.R;
 
-/**
- * Created by wfy 2018/1/8 13:58.
- */
-
-public class MyActivity extends CActivity {
+public class SetActivity extends CActivity {
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        WLog.printe("MyActivity----onCreate");
-        super.onCreate(savedInstanceState, persistentState);
-        setContentView(R.layout.activity_my);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_set);
         initView();
     }
     RelativeLayout rl_user;
@@ -36,7 +29,8 @@ public class MyActivity extends CActivity {
             rl_user.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent=new Intent(mActivity,LoginActivity.class);
+                    startActivity(intent);
                 }
             });
         }else{

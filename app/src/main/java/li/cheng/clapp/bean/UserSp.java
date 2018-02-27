@@ -2,7 +2,8 @@ package li.cheng.clapp.bean;
 
 import android.content.Context;
 
-import com.wuzhou.wlibrary.storage.SPUtils;
+import li.cheng.clapp.utils.SPUtils;
+
 
 /**
  * Created by wfy 2018/2/26 16:18.

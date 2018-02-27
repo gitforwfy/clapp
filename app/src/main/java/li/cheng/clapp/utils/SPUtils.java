@@ -1,4 +1,4 @@
-package com.wuzhou.wlibrary.storage;
+package li.cheng.clapp.utils;
 
 /**
  * Created by wfy 2016/8/1 17:41.

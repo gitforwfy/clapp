@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import com.wuzhou.wlibrary.utils.WLog;
-
 /**
  * Created by wfy 2017/12/29 10:48.
  */
@@ -22,19 +20,19 @@ public class MainService extends Service{
     @Override
     public void onCreate() {
         super.onCreate();
-        WLog.print("onCreate");
+//        WLog.print("onCreate");
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        WLog.print("onStartCommand");
+//        WLog.print("onStartCommand");
         return super.onStartCommand(intent, flags, startId);
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        WLog.print("onDestroy");
+//        WLog.print("onDestroy");
     }
 
     public static void StartService(Context context){

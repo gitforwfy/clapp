@@ -24,7 +24,6 @@ import com.baidu.trace.api.track.OnTrackListener;
 import com.baidu.trace.api.track.TrackPoint;
 import com.baidu.trace.model.OnTraceListener;
 import com.baidu.trace.model.PushMessage;
-import com.wuzhou.wlibrary.utils.WLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +40,7 @@ public class TrackActivity extends CActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WLog.printe("TrackActivity----onCreate");
+//        WLog.printe("TrackActivity----onCreate");
         SDKInitializer.initialize(getApplicationContext());
         setContentView(R.layout.activity_track);
         initView();
@@ -95,22 +94,22 @@ public class TrackActivity extends CActivity {
             // 开启服务回调
             @Override
             public void onStartTraceCallback(int status, String message) {
-                WLog.printe("轨迹服务已开启");
+//                WLog.printe("轨迹服务已开启");
             }
             // 停止服务回调
             @Override
             public void onStopTraceCallback(int status, String message) {
-                WLog.printe("轨迹服务已停止");
+//                WLog.printe("轨迹服务已停止");
             }
             // 开启采集回调
             @Override
             public void onStartGatherCallback(int status, String message) {
-                WLog.printe("开启采集");
+//                WLog.printe("开启采集");
             }
             // 停止采集回调
             @Override
             public void onStopGatherCallback(int status, String message) {
-                WLog.printe("停止采集");
+//                WLog.printe("停止采集");
             }
             // 推送回调
             @Override
@@ -160,7 +159,7 @@ public class TrackActivity extends CActivity {
             @Override
             public void onHistoryTrackCallback(HistoryTrackResponse response) {
 
-                WLog.printe("onHistoryTrackCallback");
+//                WLog.printe("onHistoryTrackCallback");
                 List<TrackPoint> points = response.getTrackPoints();//获取轨迹点
 
                 for (TrackPoint trackPoint : points) {
