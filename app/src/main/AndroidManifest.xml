@@ -58,7 +58,10 @@
             android:process=":remote" />
 
         <activity android:name=".activity.TrackActivity" />
+<<<<<<< HEAD
         <activity android:name=".activity.MyActivity" />
+=======
+>>>>>>> 903ef01fb47a5349a239519e23530c87ffd776b6
         <activity android:name=".activity.LoginActivity"></activity>
     </application>
 

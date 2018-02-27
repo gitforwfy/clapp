@@ -2,6 +2,8 @@ package li.cheng.clapp;
 
 import android.app.Application;
 
+import cn.bmob.v3.Bmob;
+
 /**
  * Created by wfy 2018/1/5 13:24.
  */
@@ -14,6 +16,10 @@ public class ClApplication extends Application{
     @Override
     public void onCreate() {
         super.onCreate();
+<<<<<<< HEAD
 //        Bmob.initialize(this, bmobId);
+=======
+        Bmob.initialize(this, bmobId);
+>>>>>>> 903ef01fb47a5349a239519e23530c87ffd776b6
     }
 }
