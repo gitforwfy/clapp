@@ -7,11 +7,6 @@ import android.widget.EditText;
 
 import com.wuzhou.wlibrary.widget.WToast;
 
-<<<<<<< HEAD
-import li.cheng.clapp.CActivity;
-import li.cheng.clapp.R;
-import li.cheng.clapp.bean.User;
-=======
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
@@ -21,7 +16,6 @@ import li.cheng.clapp.CActivity;
 import li.cheng.clapp.R;
 import li.cheng.clapp.bean.User;
 import li.cheng.clapp.bean.UserSp;
->>>>>>> 903ef01fb47a5349a239519e23530c87ffd776b6
 
 public class LoginActivity extends CActivity {
 
@@ -49,7 +43,6 @@ public class LoginActivity extends CActivity {
             User user=new User();
             user.setPhone(phone);
             user.setPassword(pwd);
-<<<<<<< HEAD
 //
 //            BmobQuery<User> query = new BmobQuery<User>();
 //            query.addWhereEqualTo(phone, "phone");
@@ -65,7 +58,6 @@ public class LoginActivity extends CActivity {
 //                    }
 //                }
 //            });
-=======
 
             BmobQuery<User> query = new BmobQuery<User>();
             query.addWhereEqualTo(phone, "phone");
@@ -81,7 +73,6 @@ public class LoginActivity extends CActivity {
                     }
                 }
             });
->>>>>>> 903ef01fb47a5349a239519e23530c87ffd776b6
         }
     }
 }
